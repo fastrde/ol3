@@ -1428,7 +1428,8 @@ ol.Map.prototype.updateSize = function() {
     this.setSize(undefined);
   } else {
     var size = goog.style.getContentBoxSize(targetElement);
-    this.setSize([size.width, size.height]);
+    var offsetTop = goog.style.getPageOffsetTop(targetElement);
+    this.setSize([size.width, size.height - offsetTop]);
   }
 };
 
